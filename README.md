@@ -1,6 +1,7 @@
 # Army Portal - Java Full Stack Project
+https://army-portal-omega.vercel.app/
 
-## 🔥 Overview
+##  Overview
 Army Portal is a **Java Full Stack project** showcasing:
 - Responsive UI with Tailwind CSS
 - Posts feed (like Instagram) with images, captions, tags, likes & comments
@@ -8,14 +9,14 @@ Army Portal is a **Java Full Stack project** showcasing:
 - Public post sharing
 - Real-time updates
 
-## 🛠️ Tech Stack
+##  Tech Stack
 - **Frontend:** HTML, CSS (Tailwind), JavaScript
 - **Backend:** Spring Boot (Java)
 - **Database:** MySQL (normalized schema: users, posts, comments)
 - **ORM:** JPA/Hibernate
 - **Security:** Spring Security (password hashing, JWT)
 
-## 📂 Schema
+##  Schema
 **Table: posts**
 - id (PK), image, caption, tags, description, likes, timestamp, postId
 
@@ -25,7 +26,7 @@ Army Portal is a **Java Full Stack project** showcasing:
 **Table: users**
 - id (PK), username, email, password (hashed)
 
-## 🚀 Features
+##  Features
 - Add posts with images, captions, and tags
 - React to posts (like system)
 - Comment on posts
