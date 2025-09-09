@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - Army Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="bg-black text-white">
+  <!-- Navbar -->
+  <header class="bg-gray-900 sticky top-0 z-50">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <h1 class="text-2xl font-bold text-blue-400">Army Portal</h1>
+      <nav>
+        <ul class="flex gap-6">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="donations.html">Donations</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="posts.html">Posts</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="profile.html" class="text-blue-400">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Profile Layout -->
+  <section class="py-16 container mx-auto grid md:grid-cols-3 gap-10">
+    <!-- Left Profile Card -->
+    <div class="bg-gray-800 rounded-xl shadow-lg p-6 flex flex-col items-center">
+      <!-- Profile Picture -->
+      <div class="w-32 h-32 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden">
+        <img id="profileImage" src="https://via.placeholder.com/150" alt="User Profile" class="w-full h-full object-cover">
+      </div>
+
+      <!-- Upload Button -->
+      <label for="uploadImage" class="mt-4 cursor-pointer text-sm text-blue-400 hover:underline">
+        Change Profile Picture
+      </label>
+      <input type="file" id="uploadImage" class="hidden" accept="image/*">
+
+      <!-- User Info -->
+      <h2 id="profileName" class="mt-6 text-2xl font-bold text-white">User Name</h2>
+      <p id="profileEmail" class="text-gray-400 text-sm">user@email.com</p>
+      <p id="profilePhone" class="text-gray-400 text-sm mb-6">+91 9876543210</p>
+
+      <!-- Details Section -->
+      <div class="w-full space-y-2 text-gray-300 text-sm">
+        <p><strong>Address:</strong> <span id="profileAddress"></span></p>
+        <p><strong>City:</strong> <span id="profileCity"></span></p>
+        <p><strong>State:</strong> <span id="profileState"></span></p>
+        <p><strong>Age:</strong> <span id="profileAge"></span></p>
+        <p><strong>Gender:</strong> <span id="profileGender"></span></p>
+        <p><strong>Family in Army:</strong> <span id="profileFamily"></span></p>
+        <p><strong>Password:</strong> <span id="profilePassword"></span></p>
+      </div>
+    </div>
+
+    <!-- Right Donations / Transactions Section -->
+    <div class="md:col-span-2">
+      <h3 class="text-2xl font-semibold mb-6">Donation History</h3>
+      <div id="donationBox" class="bg-gray-800 rounded-xl shadow-lg p-6">
+        <p class="text-gray-400">No donations yet.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-6 text-center text-gray-400">
+    <p>&copy; 2025 Army Portal | Profile Page</p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

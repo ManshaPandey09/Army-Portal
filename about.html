@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Army Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="bg-black text-white">
+  <!-- Navbar -->
+  <header class="bg-gray-900 sticky top-0 z-50 shadow-lg">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <h1 class="text-2xl font-bold text-blue-400">Army Portal</h1>
+      <nav>
+        <ul class="flex gap-6">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="text-blue-400">About</a></li>
+          <li><a href="donations.html">Donations</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="posts.html">Posts</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="py-20 text-center bg-gradient-to-r from-gray-900 via-black to-gray-900">
+    <h2 class="text-5xl font-bold text-blue-400 animate-bounce">About Army Portal</h2>
+    <p class="text-gray-300 mt-4 text-lg max-w-2xl mx-auto">
+      Learn, Support, and Connect with the Indian Army through this digital platform.  
+    </p>
+  </section>
+
+  <!-- What This App is About -->
+  <section class="py-16 container mx-auto max-w-4xl">
+    <h3 class="text-3xl font-semibold text-blue-300 mb-4 animate-fadeIn">📌 What is Army Portal?</h3>
+    <p class="text-gray-300 text-lg leading-relaxed">
+      Army Portal is a platform built to bring citizens closer to the Indian Army.  
+      Here you can explore information about the Army’s history, camps, sacrifices,  
+      and ongoing missions. It also allows you to support our soldiers via secure donations,  
+      share your thoughts through posts, and learn about ways to join the Indian Army.
+    </p>
+  </section>
+
+  <!-- How to Use -->
+  <section class="py-16 container mx-auto max-w-4xl">
+    <h3 class="text-3xl font-semibold text-blue-300 mb-4">⚡ How to Use This Platform</h3>
+    <ul class="space-y-3 text-gray-300 text-lg">
+      <li>🔹 Explore <strong>Join</strong> page to understand entry schemes into the Army.</li>
+      <li>🔹 Visit <strong>Donations</strong> to contribute securely for Army support.</li>
+      <li>🔹 Read and share stories in the <strong>Posts</strong> section.</li>
+      <li>🔹 Create a <strong>Profile</strong> and stay connected with updates.</li>
+      <li>🔹 Use <strong>Contact</strong> to reach out for queries or support.</li>
+    </ul>
+  </section>
+
+  <!-- Features -->
+  <section class="py-16 container mx-auto max-w-4xl grid md:grid-cols-2 gap-10">
+    <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition">
+      <h4 class="text-xl font-bold text-blue-400">📖 Learn</h4>
+      <p class="text-gray-300 mt-2">Understand how the Indian Army works, its history, and its missions.</p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition">
+      <h4 class="text-xl font-bold text-blue-400">💰 Donate</h4>
+      <p class="text-gray-300 mt-2">Make secure contributions that directly support Army causes.</p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition">
+      <h4 class="text-xl font-bold text-blue-400">📰 Posts</h4>
+      <p class="text-gray-300 mt-2">Share your thoughts, experiences, and support messages for soldiers.</p>
+    </div>
+    <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition">
+      <h4 class="text-xl font-bold text-blue-400">🔒 Secure</h4>
+      <p class="text-gray-300 mt-2">Your data, donations, and privacy are fully protected with encrypted systems.</p>
+    </div>
+  </section>
+
+  <!-- Privacy & Security -->
+  <section class="py-16 container mx-auto max-w-4xl">
+    <h3 class="text-3xl font-semibold text-blue-300 mb-4">🔐 Privacy & Security</h3>
+    <p class="text-gray-300 text-lg leading-relaxed">
+      We respect your privacy. All user data is protected with advanced encryption methods.  
+      Donation transactions are handled via trusted and verified payment systems.  
+      No sensitive information is shared with third parties.  
+      Your trust and security remain our top priority.
+    </p>
+  </section>
+
+  <!-- Donations -->
+  <section class="py-16 container mx-auto max-w-4xl">
+    <h3 class="text-3xl font-semibold text-blue-300 mb-4">❤️ Your Donations are Safe</h3>
+    <p class="text-gray-300 text-lg leading-relaxed">
+      Every contribution you make goes directly to verified Army welfare and support funds.  
+      We ensure complete transparency and provide updates on how donations are utilized  
+      to support soldiers and their families.
+    </p>
+  </section>
+
+  <!-- Creator Info -->
+  <section class="py-12 text-center">
+    <h3 class="text-2xl font-semibold text-blue-400">👩‍💻 Website Creator</h3>
+    <p class="text-gray-300 mt-2">Developed by <strong>Mansha Pandey</strong> in 2025.</p>
+    <p class="text-gray-300">Mission: To connect people with the Indian Army, support donations, and spread awareness.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-6 text-center text-gray-400">
+    <p>&copy; 2025 Army Portal | Built with ❤️ for our nation</p>
+  </footer>
+
+  <!-- Small Animation Helper -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const elements = document.querySelectorAll(".animate-fadeIn");
+      elements.forEach((el, i) => {
+        setTimeout(() => {
+          el.classList.add("opacity-100", "translate-y-0");
+        }, i * 300);
+      });
+    });
+  </script>
+  <style>
+    .animate-fadeIn {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-in-out;
+    }
+    .animate-fadeIn.opacity-100 {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</body>
+</html>

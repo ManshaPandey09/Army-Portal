@@ -1,0 +1,77 @@
+/* Login Modal Overlay */
+#loginModal {
+  backdrop-filter: blur(6px);
+}
+
+/* Modal Card */
+#loginModal .modal-card {
+  background: #1f2937;
+  border-radius: 16px;
+  width: 920px;
+  max-width: 95%;
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  animation: fadeIn 0.3s ease;
+  color: #fff;
+  margin-top: 50px;
+}
+
+/* Close Button */
+#loginModal .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+#loginModal .close-btn:hover {
+  color: #ef4444;
+}
+
+/* Form Grid */
+#loginModal form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+#loginModal form input {
+  background: #111827;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  padding: 0.5rem;
+  color: white;
+  font-size: 0.9rem;
+}
+#loginModal form input:focus {
+  border: 1px solid #10b981;
+  outline: none;
+}
+
+/* Buttons full width row */
+#loginModal .actions {
+  grid-column: span 2;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+#loginModal button {
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+#loginModal button:hover {
+  transform: translateY(-2px);
+}
+
+/*active nav*/
+
+/* Highlight active nav link */
+nav ul li a.text-blue-400 {
+  border-bottom: 2px solid #60a5fa;
+  padding-bottom: 2px;
+}

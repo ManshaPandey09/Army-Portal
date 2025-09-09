@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Army Portal - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="bg-black text-white">
+  <!-- Navbar -->
+  <header class="bg-gray-900 sticky top-0 z-50 shadow-lg">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <h1 class="text-2xl font-bold text-blue-400 hover:scale-105 transition">🇮🇳 Army Portal</h1>
+      <nav>
+        <ul class="flex gap-6">
+          <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
+          <li><a href="about.html" class="hover:text-blue-400">About</a></li>
+          <li><a href="donations.html" class="hover:text-blue-400">Donations</a></li>
+          <li><a href="join.html" class="hover:text-blue-400">Join</a></li>
+          <li><a href="posts.html" class="hover:text-blue-400">Posts</a></li>
+          <li><a href="contact.html" class="hover:text-blue-400">Contact</a></li>
+          <li><a href="profile.html" class="hover:text-blue-400">Profile</a></li>
+        </ul>
+      </nav>
+      <!-- Actions -->
+      <div class="flex items-center gap-3">
+        <!-- Translation -->
+        <div id="google_translate_element"></div>
+        <button id="loginBtn" class="bg-blue-500 px-3 py-1 rounded hover:bg-blue-600 shadow-md">Login</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative text-center py-20 bg-gradient-to-r from-blue-900 via-black to-blue-900 overflow-hidden">
+    <img src="https://ssbcrackexams.com/wp-content/uploads/2024/03/Indian-Armed-Forces-indian-army.jpg" 
+         class="absolute inset-0 w-full h-full object-cover opacity-20" alt="">
+    <div class="relative z-10">
+      <h2 class="text-5xl font-extrabold mb-6 text-blue-400 drop-shadow-lg animate-bounce">Welcome to the Indian Army Portal</h2>
+      <p class="max-w-2xl mx-auto text-gray-300 text-lg">Explore the strength, sacrifice, and valor of our Indian Army. Learn, support, donate, and stay connected 🇮🇳</p>
+      <p class="mt-6 text-xl font-bold text-green-400 animate-blink">✨ सेवा परमो धर्मः | जय हिंद ✨</p>
+    </div>
+  </section>
+
+  <!-- Army Story with Side Image -->
+  <section class="py-16 container mx-auto flex flex-col md:flex-row items-center gap-10">
+    <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201907/04_Sea_Harrier.jpeg?VersionId=9ZurJA3SL7DViMHGOJN2A1hcUdn2qxzd&size=690:388" 
+         alt="Army Strategy" class="rounded-xl shadow-xl w-full md:w-1/2 animate-fadeIn">
+    <div class="md:w-1/2">
+      <h3 class="text-3xl font-semibold text-blue-300 mb-4">Our Borders & Protection</h3>
+      <p class="text-gray-300 leading-relaxed">India shares borders of <span class="text-yellow-400">15,106 km</span> with multiple nations. Our Army safeguards every inch with unmatched bravery – from Siachen glaciers to deserts of Rajasthan. Each camp ensures security, training, and readiness to face challenges.</p>
+    </div>
+  </section>
+
+  <!-- Camps Cards -->
+  <section class="py-16 container mx-auto">
+    <h3 class="text-3xl font-semibold text-center mb-10 text-blue-300">Army Camps</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-gray-800 rounded-xl shadow-lg p-6 hover:scale-105 hover:shadow-2xl transition animate-fadeIn">
+        <h4 class="text-xl font-bold text-blue-400">Camp Alpha</h4>
+        <p class="text-gray-300 mt-2">Located in Northern India, Camp Alpha ensures border security & elite training.</p>
+      </div>
+      <div class="bg-gray-800 rounded-xl shadow-lg p-6 hover:scale-105 hover:shadow-2xl transition animate-fadeIn">
+        <h4 class="text-xl font-bold text-blue-400">Camp Bravo</h4>
+        <p class="text-gray-300 mt-2">Medical support hub offering critical healthcare to soldiers & families.</p>
+      </div>
+      <div class="bg-gray-800 rounded-xl shadow-lg p-6 hover:scale-105 hover:shadow-2xl transition animate-fadeIn">
+        <h4 class="text-xl font-bold text-blue-400">Camp Charlie</h4>
+        <p class="text-gray-300 mt-2">Logistics powerhouse ensuring continuous supply for Army operations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section class="py-16 bg-gray-900">
+    <h3 class="text-3xl font-semibold text-center mb-10 text-blue-300">🏅 Achievements & Stats</h3>
+    <div class="grid md:grid-cols-4 gap-8 container mx-auto text-center">
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition animate-fadeIn">
+        <h4 class="text-2xl font-bold text-green-400">120+</h4>
+        <p class="text-gray-300">Camps & Training Bases</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition animate-fadeIn">
+        <h4 class="text-2xl font-bold text-red-400">5000+</h4>
+        <p class="text-gray-300">Missiles & Artillery</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition animate-fadeIn">
+        <h4 class="text-2xl font-bold text-yellow-400">300+</h4>
+        <p class="text-gray-300">Battles Won</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:scale-105 transition animate-fadeIn">
+        <h4 class="text-2xl font-bold text-blue-400">∞</h4>
+        <p class="text-gray-300">Respect from Citizens</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-6 text-center text-gray-400">
+    <p>&copy; 2025 Army Portal | Made with ❤️ for our nation 🇮🇳</p>
+    <button onclick="scrollToTop()" class="fixed bottom-6 right-6 bg-blue-500 hover:bg-blue-600 p-3 rounded-full shadow-lg">⬆</button>
+  </footer>
+
+  <!-- Login Modal -->
+<div id="loginModal" 
+     class="hidden fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-70">
+  <div class="bg-gray-800 p-6 rounded-xl shadow-lg w-[90%] max-w-lg relative animate-fadeIn z-[10000]">
+    <button type="button" 
+            class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-2xl" 
+            onclick="closeLoginModal()">&times;</button>
+    <h3 class="text-xl font-bold mb-3 text-center text-blue-400">Login</h3>
+    <form id="loginForm" class="grid gap-3">
+      <input type="text" name="firstName" placeholder="First Name" required class="p-2 rounded bg-gray-700">
+      <input type="text" name="lastName" placeholder="Last Name" required class="p-2 rounded bg-gray-700">
+      <input type="text" name="gender" placeholder="Gender" class="p-2 rounded bg-gray-700">
+      <input type="number" name="age" placeholder="Age" class="p-2 rounded bg-gray-700">
+      <input type="text" name="state" placeholder="State" class="p-2 rounded bg-gray-700">
+      <input type="text" name="city" placeholder="City" class="p-2 rounded bg-gray-700">
+      <input type="text" name="address" placeholder="Address" class="p-2 rounded bg-gray-700 col-span-2">
+      <input type="tel" name="phone" placeholder="Phone Number" class="p-2 rounded bg-gray-700 col-span-2">
+      <input type="email" name="email" placeholder="Email" class="p-2 rounded bg-gray-700 col-span-2">
+      <input type="password" name="password" placeholder="Password" class="p-2 rounded bg-gray-700 col-span-2">
+      <div class="flex justify-between mt-4">
+        <button type="submit" class="bg-green-500 px-4 py-2 rounded hover:bg-green-600">Save</button>
+        <button type="button" onclick="closeLoginModal()" class="bg-red-500 px-4 py-2 rounded hover:bg-red-600">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+  <!-- JS -->
+  <script>
+    const loginBtn = document.getElementById("loginBtn");
+    const loginModal = document.getElementById("loginModal");
+    loginBtn.addEventListener("click", () => loginModal.classList.remove("hidden"));
+    function closeLoginModal() { loginModal.classList.add("hidden"); }
+
+    // Scroll animations
+    const fadeElems = document.querySelectorAll(".animate-fadeIn");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add("opacity-100", "translate-y-0");
+      });
+    }, { threshold: 0.2 });
+    fadeElems.forEach(el => observer.observe(el));
+
+    // Go to top
+    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  </script>
+
+  <!-- Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <style>
+    .animate-fadeIn { opacity:0; transform: translateY(30px); transition: all 1s ease-in-out; }
+    .animate-fadeIn.opacity-100 { opacity:1; transform: translateY(0); }
+    .animate-blink { animation: blink 1.5s infinite; }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
+  </style>
+</body>
+</html>

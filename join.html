@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join - Army Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Leaflet Map (for custom India map with red dots) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body class="bg-black text-white">
+  <!-- Navbar -->
+  <header class="bg-gray-900 sticky top-0 z-50 shadow-lg">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <h1 class="text-2xl font-bold text-blue-400">Army Portal</h1>
+      <nav>
+        <ul class="flex gap-6">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="donations.html">Donations</a></li>
+          <li><a href="join.html" class="text-blue-400">Join</a></li>
+          <li><a href="posts.html">Posts</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<!-- Hero Section -->
+  <section class="relative h-96 flex items-center justify-center bg-cover bg-center" 
+    style="background-image: url('https://img.freepik.com/premium-photo/india-army-background_191066-664.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <h2 class="text-5xl font-bold z-10 text-blue-300 animate-bounce">Serve with Honor - Join Indian Army</h2>
+  </section>
+
+  <!-- How to Join -->
+  <section class="py-16 container mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">How to Join</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="bg-gray-800 rounded-xl shadow-lg p-6 hover:scale-105 transition-transform" data-aos="zoom-in">
+        <h3 class="text-xl font-semibold mb-2 text-blue-400">NDA</h3>
+        <p>For 12th pass students through the National Defence Academy (training in Khadakwasla, Pune).</p>
+      </div>
+      <div class="bg-gray-800 rounded-xl shadow-lg p-6 hover:scale-105 transition-transform" data-aos="zoom-in">
+        <h3 class="text-xl font-semibold mb-2 text-blue-400">CDS</h3>
+        <p>Graduates can apply via UPSC’s Combined Defence Services exam for officer entries.</p>
+      </div>
+      <div class="bg-gray-800 rounded-xl shadow-lg p-6 hover:scale-105 transition-transform" data-aos="zoom-in">
+        <h3 class="text-xl font-semibold mb-2 text-blue-400">Technical Entries</h3>
+        <p>Engineering graduates via SSC Tech & TGC entries in specialized fields.</p>
+      </div>
+      <div class="bg-gray-800 rounded-xl shadow-lg p-6 hover:scale-105 transition-transform" data-aos="zoom-in">
+        <h3 class="text-xl font-semibold mb-2 text-blue-400">Medical Corps</h3>
+        <p>Doctors and healthcare professionals serve through the Army Medical Corps.</p>
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <a href="https://joinindianarmy.nic.in" target="_blank" class="bg-blue-500 px-6 py-2 rounded hover:bg-blue-600 inline-block">
+        Official Join Indian Army Website
+      </a>
+    </div>
+  </section>
+
+  <!-- Indian Army Facts -->
+  <section class="py-16 bg-gray-900">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-12" data-aos="fade-up">Facts & Strength</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg" data-aos="fade-up">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2">Troop Strength</h3>
+          <p>1.4 million active personnel & 2.1 million reserves. <br><span class="text-sm text-gray-400">[Source: Wikipedia]</span></p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg" data-aos="fade-up">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2">Camps & Divisions</h3>
+          <p>7 Commands, 14 Corps, 37 Divisions, 40+ training academies & camps nationwide.</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg" data-aos="fade-up">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2">Wars & Operations</h3>
+          <p>1947, 1965, 1971 wars won; 1999 Kargil victory. Countless peacekeeping missions worldwide.</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg" data-aos="fade-up">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2">Missile Arsenal</h3>
+          <p>BrahMos, Agni, Prithvi, Akash, Nag – indigenously developed defense missiles.</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg" data-aos="fade-up">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2">Respect & Honors</h3>
+          <p>Param Vir Chakra, Maha Vir Chakra & Vir Chakra awarded to brave warriors.</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg" data-aos="fade-up">
+          <h3 class="text-xl font-semibold text-blue-400 mb-2">Sources</h3>
+          <p><a href="https://en.wikipedia.org/wiki/Indian_Army" target="_blank" class="underline text-blue-400">Wikipedia</a><br>
+             <a href="https://joinindianarmy.nic.in" target="_blank" class="underline text-blue-400">Official Army Portal</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive India Map -->
+  <section class="py-16 container mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-8" data-aos="fade-up">Army Presence on Borders</h2>
+    <div id="indiaMap" class="w-full h-[500px] rounded-xl shadow-lg" data-aos="zoom-in"></div>
+  </section>
+
+  
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-6 text-center text-gray-400">
+    <p>&copy; 2025 Army Portal | Serve the Nation</p>
+  </footer>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    // Leaflet Map Setup
+    var map = L.map('indiaMap').setView([22.9734, 78.6569], 5); // Center India
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Army border markers
+    const borders = [
+      { name: "Siachen Glacier", coords: [35.4, 77.1] },
+      { name: "LOC - Kashmir", coords: [34.0, 74.5] },
+      { name: "Indo-China Border (LAC)", coords: [32.5, 79.0] },
+      { name: "Indo-Pak Border Rajasthan", coords: [27.5, 70.5] },
+      { name: "Indo-Bangladesh Border", coords: [25.0, 89.9] },
+      { name: "Indo-Myanmar Border", coords: [25.3, 95.0] }
+    ];
+
+    borders.forEach(border => {
+      L.circleMarker(border.coords, {
+        radius: 8,
+        color: "red",
+        fillColor: "#f03",
+        fillOpacity: 0.7,
+      }).addTo(map).bindPopup(`<b>${border.name}</b><br>Protected by Indian Army.`);
+    });
+
+  </script>
+</body>
+</html>

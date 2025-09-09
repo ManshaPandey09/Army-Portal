@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donations - Army Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body class="bg-black text-white">
+  <!-- Navbar -->
+  <header class="bg-gray-900 sticky top-0 z-50 shadow-lg">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <h1 class="text-2xl font-bold text-blue-400">Army Portal</h1>
+      <nav>
+        <ul class="flex gap-6">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="donations.html" class="text-blue-400">Donations</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="posts.html">Posts</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-gray-900 via-black to-gray-900 text-center py-20">
+    <h2 class="text-5xl font-bold text-blue-400 animate-pulse">Support Our Heroes</h2>
+    <p class="text-lg mt-4 text-gray-300 max-w-2xl mx-auto">
+      Every contribution you make ensures the well-being of soldiers, their families, and those in need across India.  
+      Together, we can make a difference.
+    </p>
+  </section>
+
+  <!-- Official Donation Platforms -->
+  <section class="container mx-auto py-16">
+    <h3 class="text-3xl font-semibold text-center mb-8">Official Donation Platforms</h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-gray-800 p-6 rounded-lg shadow hover:scale-105 transition">
+        <h4 class="text-xl font-bold text-blue-400">National Defence Fund (NDF)</h4>
+        <p class="mt-2 text-gray-300">For welfare of armed forces and families. Eligible for tax benefits.</p>
+        <a href="https://ndf.gov.in/en/online-donation" target="_blank" class="block mt-3 text-blue-300 underline">Donate Here</a>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg shadow hover:scale-105 transition">
+        <h4 class="text-xl font-bold text-blue-400">Maa Bharati Ke Sapoot</h4>
+        <p class="mt-2 text-gray-300">Supports Armed Forces Battle Casualties Welfare Fund.</p>
+        <a href="https://www.maabharatikesapoot.mod.gov.in" target="_blank" class="block mt-3 text-blue-300 underline">Contribute Now</a>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg shadow hover:scale-105 transition">
+        <h4 class="text-xl font-bold text-blue-400">Bharat Ke Veer</h4>
+        <p class="mt-2 text-gray-300">Donate directly to bravehearts or to the collective fund.</p>
+        <a href="https://bharatkeveer.gov.in/" target="_blank" class="block mt-3 text-blue-300 underline">Donate Today</a>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg shadow hover:scale-105 transition">
+        <h4 class="text-xl font-bold text-blue-400">Army Women's Welfare Association (AWWA)</h4>
+        <p class="mt-2 text-gray-300">Supports widows, war veterans’ families, and children’s education.</p>
+        <a href="https://awwa.org.in/Donation" target="_blank" class="block mt-3 text-blue-300 underline">Support Now</a>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg shadow hover:scale-105 transition">
+        <h4 class="text-xl font-bold text-blue-400">Private NGOs</h4>
+        <p class="mt-2 text-gray-300">Foundations like Mukul Madhav & Saviour Foundation support forces & families.</p>
+        <a href="https://www.mmpc.in/our-work/defence-forces/" target="_blank" class="block mt-3 text-blue-300 underline">Explore</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Your Army Portal Donation Form -->
+  <section class="py-16 bg-gray-900">
+    <h3 class="text-3xl font-semibold text-center mb-8">Contribute Through Army Portal</h3>
+    <form id="donationForm" class="max-w-lg mx-auto bg-gray-800 p-6 rounded-lg space-y-4 shadow-lg">
+      <input type="text" name="donor" placeholder="Your Name" class="w-full p-2 rounded bg-gray-700 text-white" required>
+      <select name="category" class="w-full p-2 rounded bg-gray-700 text-white" required>
+        <option value="">Select Donation Category</option>
+        <option value="Camp Resources">Camp Resources</option>
+        <option value="Medical">Medical</option>
+        <option value="Education">Education</option>
+        <option value="Disaster Relief">Disaster Relief</option>
+        <option value="Cancer/Health">Cancer & Poor Patients</option>
+        <option value="Other">Other</option>
+      </select>
+      <input type="number" name="amount" placeholder="Amount (₹)" class="w-full p-2 rounded bg-gray-700 text-white" required>
+      <button type="submit" class="w-full bg-blue-500 py-2 rounded hover:bg-blue-600 transition">Donate</button>
+    </form>
+    <p class="text-center mt-6 text-gray-400">Your donations are 100% secure & private. We ensure data protection and safe transactions.</p>
+  </section>
+
+  <!-- Helping Whole India Section -->
+  <section class="container mx-auto py-16">
+    <h3 class="text-3xl font-semibold text-center mb-8 text-blue-400">We Are Helping Whole India Together</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-gray-800 p-6 rounded-lg shadow hover:scale-105 transition">
+        <h4 class="text-xl font-bold">Cancer Patients</h4>
+        <p class="mt-2 text-gray-300">Supporting treatment, medical care, and financial aid for underprivileged patients.</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg shadow hover:scale-105 transition">
+        <h4 class="text-xl font-bold">Disaster Relief</h4>
+        <p class="mt-2 text-gray-300">Helping families affected by floods, earthquakes, and natural calamities.</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-lg shadow hover:scale-105 transition">
+        <h4 class="text-xl font-bold">Poor & Needy</h4>
+        <p class="mt-2 text-gray-300">Providing essentials like food, clothes, and shelter for families in need.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-6 text-center text-gray-400">
+    <p>&copy; 2025 Army Portal | Support our Soldiers & Our Nation</p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

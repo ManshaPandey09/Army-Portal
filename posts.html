@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Army Posts - Army Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+  <style>
+    body { background-color: #0a0a0a; }
+    .card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.6); }
+    .reaction-btn { cursor: pointer; transition: transform 0.2s; }
+    .reaction-btn:hover { transform: scale(1.2); }
+  </style>
+</head>
+<body class="bg-black text-white">
+  <!-- Navbar -->
+  <header class="bg-gray-900 sticky top-0 z-50 shadow-lg">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <h1 class="text-2xl font-bold text-blue-400 animate__animated animate__fadeInLeft">Army Portal</h1>
+      <nav>
+        <ul class="flex gap-6">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="donations.html">Donations</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="posts.html" class="text-blue-400">Posts</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Posts Section -->
+  <section class="py-16 container mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-8 animate__animated animate__fadeInDown">Army Posts</h2>
+
+    <!-- Post Form -->
+    <form id="postForm" class="max-w-lg mx-auto bg-gray-800 p-6 rounded-lg space-y-4 mb-10 shadow-lg animate__animated animate__fadeInUp">
+      <input type="text" name="caption" placeholder="Caption" class="w-full p-2 rounded bg-gray-700 text-white" required>
+      <input type="text" name="tags" placeholder="Tags (comma separated)" class="w-full p-2 rounded bg-gray-700 text-white">
+      <textarea name="description" placeholder="Write description..." class="w-full p-2 rounded bg-gray-700 text-white"></textarea>
+      <input type="url" name="img" placeholder="Image URL (optional)" class="w-full p-2 rounded bg-gray-700 text-white">
+      <button type="submit" class="w-full bg-blue-500 py-2 rounded hover:bg-blue-600 transition">Share Post</button>
+    </form>
+
+    <!-- Feed -->
+    <div id="postsContainer" class="grid md:grid-cols-2 gap-8"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-6 text-center text-gray-400">
+    <p>&copy; 2025 Army Portal | Share Your Support</p>
+  </footer>
+
+  <script>
+    const postsAPI = "https://sheetdb.io/api/v1/xhz0p8n70xn72";
+    const commentsAPI = "https://sheetdb.io/api/v1/2al1ojl2y61aq";
+
+    // simulate logged in user (later hook with real login)
+    const currentUser = "Anonymous";
+
+    const form = document.getElementById("postForm");
+    const postsContainer = document.getElementById("postsContainer");
+
+    // Submit Post
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form));
+      data.timestamp = new Date().toLocaleString();
+      data.postId = Date.now().toString();
+      data.likes = 0; data.supports = 0; data.respects = 0;
+      data.owner = currentUser; // save owner
+
+      await fetch(postsAPI, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data })
+      });
+
+      form.reset();
+      addPostToPage(data); // show instantly
+    });
+
+    // Add Post to Page
+    function addPostToPage(post) {
+      const div = document.createElement("div");
+      div.className = "card bg-gray-800 p-5 rounded-lg shadow-xl animate__animated animate__fadeInUp";
+
+      div.innerHTML = `
+        <img src="${post.img || 'https://via.placeholder.com/400'}" class="rounded mb-3 w-full h-60 object-cover">
+        <h3 class="text-2xl font-bold text-blue-400">${post.caption}</h3>
+        <p class="text-gray-300 mt-2">${post.description || ""}</p>
+        <p class="text-sm text-green-400 mt-1">${post.tags || ""}</p>
+        <p class="text-xs text-gray-500 mt-1">Posted by ${post.owner || "Unknown"} on ${post.timestamp}</p>
+
+        <!-- Reactions -->
+        <div class="flex gap-6 mt-4 text-sm">
+          <button class="reaction-btn text-red-400" data-type="likes" data-id="${post.postId}">❤️ ${post.likes || 0}</button>
+          <button class="reaction-btn text-yellow-400" data-type="supports" data-id="${post.postId}">💪 ${post.supports || 0}</button>
+          <button class="reaction-btn text-blue-400" data-type="respects" data-id="${post.postId}">🙏 ${post.respects || 0}</button>
+        </div>
+
+        <!-- Comments -->
+        <div class="mt-4">
+          <button class="commentToggle text-gray-400 hover:text-blue-400 transition" data-id="${post.postId}">Comments</button>
+          <div class="comments hidden mt-3 bg-gray-900 p-3 rounded-lg">
+            <input type="text" placeholder="Write a comment..." class="commentInput w-full p-2 rounded bg-gray-700 text-white mb-2">
+            <button class="addComment bg-blue-500 px-3 py-1 rounded text-sm" data-id="${post.postId}">Post</button>
+            <div class="commentList text-sm mt-2 space-y-2"></div>
+          </div>
+        </div>
+
+        <!-- Delete Post (only owner) -->
+        ${post.owner === currentUser ? `
+          <div class="mt-4">
+            <button class="deletePost bg-red-600 px-3 py-1 rounded text-sm" data-id="${post.postId}">Remove Post</button>
+          </div>` : ""}
+      `;
+      postsContainer.prepend(div);
+      attachEvents();
+    }
+
+    // Load Posts
+    async function loadPosts() {
+      const res = await fetch(postsAPI);
+      const posts = await res.json();
+      postsContainer.innerHTML = "";
+      posts.reverse().forEach(post => addPostToPage(post));
+    }
+
+    // Attach Events
+    function attachEvents() {
+      // Toggle comments
+      document.querySelectorAll(".commentToggle").forEach(btn => {
+        btn.onclick = () => {
+          const container = btn.closest(".card").querySelector(".comments");
+          container.classList.toggle("hidden");
+          loadComments(btn.dataset.id, container.querySelector(".commentList"));
+        };
+      });
+
+      // Add comment
+      document.querySelectorAll(".addComment").forEach(btn => {
+        btn.onclick = async () => {
+          const postId = btn.dataset.id;
+          const input = btn.previousElementSibling;
+          const comment = input.value.trim();
+          if (!comment) return;
+
+          const data = { postId, username: currentUser, comment, timestamp: new Date().toLocaleString() };
+          await fetch(commentsAPI, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ data })
+          });
+
+          input.value = "";
+          loadPosts();
+        };
+      });
+
+      // Reactions
+      document.querySelectorAll(".reaction-btn").forEach(btn => {
+        btn.onclick = async () => {
+          const postId = btn.dataset.id;
+          const type = btn.dataset.type;
+
+          const res = await fetch(`${postsAPI}/postId/${postId}`);
+          let [post] = await res.json();
+          post[type] = (parseInt(post[type] || 0) + 1).toString();
+
+          await fetch(`${postsAPI}/postId/${postId}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ data: post })
+          });
+
+          loadPosts();
+        };
+      });
+
+      // Delete Post
+      document.querySelectorAll(".deletePost").forEach(btn => {
+        btn.onclick = async () => {
+          const postId = btn.dataset.id;
+          if (!confirm("Are you sure you want to delete this post?")) return;
+
+          await fetch(`${postsAPI}/postId/${postId}`, { method: "DELETE" });
+          loadPosts();
+        };
+      });
+    }
+
+    // Load Comments
+    async function loadComments(postId, container) {
+      const res = await fetch(commentsAPI);
+      const comments = await res.json();
+      const filtered = comments.filter(c => c.postId === postId);
+      container.innerHTML = filtered.map(c => `
+        <p><span class="font-bold text-blue-400">${c.username}:</span> ${c.comment} <span class="text-xs text-gray-500">(${c.timestamp})</span></p>
+      `).join("");
+    }
+
+    loadPosts();
+  </script>
+</body>
+</html>
